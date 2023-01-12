@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './Pages/Home'
 import Services from './Pages/Services';
 import About from './Pages/About'
+import Error from './Pages/Error';
 import './App.css';
 import Contact from './Pages/Contact';
 import Header from './Components/Header'
@@ -40,7 +41,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/services" element={<Services />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="*" element={<Error/>}/>
 
       </Routes>
       <Footer/>

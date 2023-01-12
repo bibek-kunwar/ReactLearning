@@ -1,9 +1,14 @@
+/* we also use arry destructring inspite of proops */
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { Button } from './Button'
+import {  useGlobalContext } from './Context'
 
-const HeroSection = (props) => {
+const HeroSection = () => {
+
+
+  const {name,image} = useGlobalContext();
 
   return (
     <Wrapper>
@@ -12,8 +17,8 @@ const HeroSection = (props) => {
           <p className="hero-top-data">
             Hey, Am
           </p>
-          <h1 className="hero-heading">Bibek Kunwar</h1>
-          <p className="hero-para"> Am Good in Html, CSS, JS, React JS</p>
+          <h1 className="hero-heading"> {name }</h1>
+          <p className="hero-para">  Am Good in Html, CSS, JS, React JS</p>
           <Button className="btn-hireme-btn">
           <NavLink to="./contact">Hire Me</NavLink>
         </Button>
@@ -22,7 +27,7 @@ const HeroSection = (props) => {
 
         <div className="section-hero-image">
           <picture>
-            <img src="./Images/hero.svg" alt="heroimg" className="hero-img" />
+            <img src={image} alt="heroimg" className="hero-img" />
           </picture>
         </div>
      </div>
